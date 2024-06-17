@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class InteractSystem : MonoBehaviour
 {
     private BoxCollider2D bc;
-    public int layer;
     [SerializeField] private LayerMask interactable;
 
     public static event Action<int> OnInteract = delegate { };
@@ -15,7 +14,6 @@ public class InteractSystem : MonoBehaviour
     void Awake()
     {
         bc = GetComponent<BoxCollider2D>();
-        layer = gameObject.layer;
     }
 
     //button interact.
@@ -23,7 +21,7 @@ public class InteractSystem : MonoBehaviour
     {
         if (context.performed && IsTouched())
         {
-            OnInteract(layer);
+            OnInteract(gameObject.layer);
         }
     }
 

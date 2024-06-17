@@ -14,11 +14,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask platformGround;
     [SerializeField] private LayerMask wallGround;
-    [SerializeField] private string nameLayerPlayer;
     [SerializeField] private PhysicsMaterial2D noFriction;
     [SerializeField] private PhysicsMaterial2D normalFriction;
 
-    public static event Action<string> OnFall = delegate { };
+    public static event Action<int> OnFall = delegate { };
 
     void Awake()
     {
@@ -85,7 +84,7 @@ public class Movement : MonoBehaviour
         if (context.performed && IsPlatform())
         {
             gameObject.transform.SetParent(null);
-            OnFall(nameLayerPlayer);
+            OnFall(gameObject.layer);
         }
     }
 
@@ -111,13 +110,13 @@ public class Movement : MonoBehaviour
     {
         //no le gusta con el raycast, hay que mirar que le pasa.
         //return Physics2D.Raycast(bc.bounds.min, Vector2.down, .1f);
-        return Physics2D.BoxCast(bc.bounds.center, new Vector2(bc.bounds.size.x - 0.01f, 0.1f), 0f, Vector2.down, bc.bounds.extents.y, jumpableGround);
+        return Physics2D.BoxCast(bc.bounds.center, new Vector2(bc.bounds.size.x, 0.1f), 0f, Vector2.down, bc.bounds.extents.y, jumpableGround);
         //(bc.bounds.size * Vector2.right) + new Vector2(-0.01f,0.1f) 
     }
 
     public bool IsPlatform()
     {
-        return Physics2D.BoxCast(bc.bounds.center, new Vector2(bc.bounds.size.x - 0.01f, 0.1f), 0f, Vector2.down, bc.bounds.extents.y, platformGround);
+        return Physics2D.BoxCast(bc.bounds.center, new Vector2(bc.bounds.size.x, 0.1f), 0f, Vector2.down, bc.bounds.extents.y, platformGround);
     }
 
     public bool IsWall()
@@ -131,13 +130,13 @@ public class Movement : MonoBehaviour
         Gizmos.color = Color.cyan;
 
         //left.
-        Gizmos.DrawRay (new Vector3 (bc.bounds.center.x - bc.bounds.extents.x + .01f, bc.bounds.center.y - bc.bounds.extents.y - 0.1f), Vector3.up * .2f);
+        Gizmos.DrawRay (new Vector3 (bc.bounds.center.x - bc.bounds.extents.x, bc.bounds.center.y - bc.bounds.extents.y - 0.1f), Vector3.up * .2f);
         //bottom.
-        Gizmos.DrawRay(new Vector3 (bc.bounds.center.x - bc.bounds.extents.x + .01f, bc.bounds.center.y - bc.bounds.extents.y - 0.1f), new Vector2 (bc.bounds.size.x -.02f, 0));
+        Gizmos.DrawRay(new Vector3 (bc.bounds.center.x - bc.bounds.extents.x, bc.bounds.center.y - bc.bounds.extents.y - 0.1f), new Vector2 (bc.bounds.size.x, 0));
         //right.
-        Gizmos.DrawRay(new Vector3(bc.bounds.center.x + bc.bounds.extents.x - .01f, bc.bounds.center.y - bc.bounds.extents.y - 0.1f), Vector3.up * .2f);
+        Gizmos.DrawRay(new Vector3(bc.bounds.center.x + bc.bounds.extents.x, bc.bounds.center.y - bc.bounds.extents.y - 0.1f), Vector3.up * .2f);
         //up.
-        Gizmos.DrawRay(new Vector3(bc.bounds.center.x - bc.bounds.extents.x + .01f, bc.bounds.center.y - bc.bounds.extents.y + 0.1f), new Vector2(bc.bounds.size.x - .02f, 0));
+        Gizmos.DrawRay(new Vector3(bc.bounds.center.x - bc.bounds.extents.x, bc.bounds.center.y - bc.bounds.extents.y + 0.1f), new Vector2(bc.bounds.size.x, 0));
 
 
         //Wall collider

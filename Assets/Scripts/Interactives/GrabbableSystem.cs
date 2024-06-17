@@ -85,7 +85,7 @@ public class GrabbableSystem : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(this.gameObject.transform.parent == null) player = null;
-        Debug.Log(player);
+        //Debug.Log(player);
+        if (this.gameObject.transform.parent == null) player = null;
     }
 }

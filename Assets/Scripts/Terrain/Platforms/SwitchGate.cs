@@ -8,11 +8,13 @@ public class SwitchGate : MonoBehaviour
 {
     [SerializeField] private Color redColor;
     [SerializeField] private int redLayer;
+    private bool isMococo = false;
     [SerializeField] private Color blueColor;
     [SerializeField] private int blueLayer;
+    private bool isFuwawa = false;
     [SerializeField] private GameObject gateToSwitch;
     private SpriteRenderer sr;
-    private GameObject player;
+    private string playerL;
     [SerializeField] private string layer;
 
     private void Awake()
@@ -32,7 +34,7 @@ public class SwitchGate : MonoBehaviour
 
     public void OnSwitchGate(int layer)
     {
-        if (player != null && player.gameObject.layer == layer)
+        if ((isMococo && LayerMask.NameToLayer("Mococo") == layer) || (isFuwawa && LayerMask.NameToLayer("Fuwawa") == layer))
         {
             if (gateToSwitch.layer == redLayer)
             {
@@ -49,11 +51,13 @@ public class SwitchGate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Movement>()) player = collision.gameObject;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Mococo")) isMococo = true;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Fuwawa")) isFuwawa = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        player = null;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Mococo")) isMococo = false;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Fuwawa")) isFuwawa = false;
     }
 }

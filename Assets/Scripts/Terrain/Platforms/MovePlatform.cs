@@ -27,17 +27,6 @@ public class MovePlatform : MonoBehaviour
         if (Vector2.Distance(transform.position, endPoint.position) < .5f) targetPos = startPoint.position;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Movement>() && collision.GetComponent<Movement>().IsPlatform()) collision.transform.SetParent(this.transform);
-        if (collision.GetComponent<GrabbableSystem>() && collision.GetComponent<GrabbableSystem>().transform.parent == null) collision.transform.SetParent(this.transform);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.GetComponent<Movement>()) collision.transform.SetParent(null);
-    }
-
     private void OnDrawGizmos()
     {
         if(startPoint != null && endPoint != null)
