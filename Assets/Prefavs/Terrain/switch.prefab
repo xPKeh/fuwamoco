@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 405350742745813523}
   - component: {fileID: 405350742745813520}
   - component: {fileID: 405350742745813525}
-  - component: {fileID: 405350742745813522}
+  - component: {fileID: 1717440086674928729}
   m_Layer: 11
   m_Name: switch
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &405350742745813522
+--- !u!114 &1717440086674928729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,11 +119,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 405350742745813521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b508584361eb894ab9f0990209b30ea, type: 3}
+  m_Script: {fileID: 11500000, guid: ce7d8b5c14e1ce7429129efe159f3068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redColor: {r: 0.92549026, g: 0.33333334, b: 0.13333334, a: 1}
+  redColor: {r: 0.9339623, g: 0.3568441, b: 0.8524484, a: 0}
   redLayer: 10
-  blueColor: {r: 0.13333334, g: 0.6666667, b: 0.92549026, a: 1}
+  blueColor: {r: 0.21560161, g: 0.5996818, b: 0.8962264, a: 0}
   blueLayer: 9
-  gateToSwitch: {fileID: 0}
+  gateToSwitch:
+  - {fileID: 0}
