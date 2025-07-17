@@ -13,18 +13,18 @@ public class GrabbableSystem : MonoBehaviour
     private void Awake()
     {
         bc = GetComponents<BoxCollider2D>()[0];
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
 
     private void OnEnable()
     {
-        InteractSystem.OnInteract += OnGrabItem;
+        //InteractSystem.OnInteract += OnGrabItem;
     }
 
     private void OnDisable()
     {
-        InteractSystem.OnInteract -= OnGrabItem;
+        //InteractSystem.OnInteract -= OnGrabItem;
     }
 
     public void FixedUpdate()
@@ -75,7 +75,7 @@ public class GrabbableSystem : MonoBehaviour
     }
     public bool IsPlatform()
     {
-        return Physics2D.BoxCast(bc.bounds.center, new Vector2(bc.bounds.size.x - 0.01f, 0.1f), 0f, Vector2.down, bc.bounds.extents.y, placeableGround);
+        return Physics2D.BoxCast(bc.bounds.center, new Vector2(bc.bounds.size.x - 0.01f, 0.1f), 0f, Vector2.down, bc.bounds.extents.y, placeablePlatform);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

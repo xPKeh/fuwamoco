@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 5670910660535238544}
   - component: {fileID: 5670910660535238545}
   - component: {fileID: 5670910660535238550}
+  - component: {fileID: 5920131708677212385}
+  - component: {fileID: 7452861813882830356}
   - component: {fileID: 1160643025}
   - component: {fileID: 1160643026}
   m_Layer: 6
@@ -181,12 +183,6 @@ MonoBehaviour:
   speed: 10
   jumpSpeed: 10
   bc: {fileID: 5670910660535238547}
-  jumpableGround:
-    serializedVersion: 2
-    m_Bits: 256
-  platformGround:
-    serializedVersion: 2
-    m_Bits: 4096
   wallGround:
     serializedVersion: 2
     m_Bits: 5376
@@ -322,6 +318,37 @@ MonoBehaviour:
   m_DefaultActionMap: FirstPlayer
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5920131708677212385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670910660535238548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1331f05bfd73874a923943ec6224e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 256
+  platformGround:
+    serializedVersion: 2
+    m_Bits: 4096
+  bc: {fileID: 0}
+--- !u!114 &7452861813882830356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670910660535238548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcae6a81c99db442aa0c7b3086faf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1160643025
 MonoBehaviour:
   m_ObjectHideFlags: 0

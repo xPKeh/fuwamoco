@@ -1,0 +1,1 @@
+{"victorias":26,"completedLevels":{"W":0,"Lvl":1},"levelStarsDictionaryWrapper":{"levelStarsList":[{"levelId":{"W":1,"Lvl":1},"levelStars":{"star1":true,"star2":true,"star3":false}},{"levelId":{"W":0,"Lvl":0},"levelStars":{"star1":true,"star2":false,"star3":false}}]}}
