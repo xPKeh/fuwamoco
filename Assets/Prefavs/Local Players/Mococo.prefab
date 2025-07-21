@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2833669863094053300}
   - component: {fileID: 2833669863094053303}
   - component: {fileID: 2833669863094053302}
+  - component: {fileID: 7822721329995868064}
+  - component: {fileID: 3833642523686469712}
   - component: {fileID: 2833669863094053297}
   - component: {fileID: 1200156808}
   - component: {fileID: 1200156809}
@@ -152,17 +154,42 @@ MonoBehaviour:
   speed: 10
   jumpSpeed: 10
   bc: {fileID: 2833669863094053300}
+  wallGround:
+    serializedVersion: 2
+    m_Bits: 4864
+  noFriction: {fileID: 6200000, guid: c759d5bb283d9df45a664bb6a7e21e4a, type: 2}
+  normalFriction: {fileID: 6200000, guid: cdecc09fa91e12a42af33455c1536363, type: 2}
+--- !u!114 &7822721329995868064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833669863094053299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1331f05bfd73874a923943ec6224e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   jumpableGround:
     serializedVersion: 2
     m_Bits: 256
   platformGround:
     serializedVersion: 2
     m_Bits: 4096
-  wallGround:
-    serializedVersion: 2
-    m_Bits: 4864
-  noFriction: {fileID: 6200000, guid: c759d5bb283d9df45a664bb6a7e21e4a, type: 2}
-  normalFriction: {fileID: 6200000, guid: cdecc09fa91e12a42af33455c1536363, type: 2}
+  bc: {fileID: 2833669863094053300}
+--- !u!114 &3833642523686469712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833669863094053299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dcae6a81c99db442aa0c7b3086faf1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2833669863094053297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +359,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf521fec460d664f887a4ceb7d6793c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placeableGround:
+    serializedVersion: 2
+    m_Bits: 0
+  placeablePlatform:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8522585230891925228
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,27 +6,42 @@ using UnityEngine.InputSystem;
 
 public class InteractSystem : MonoBehaviour
 {
-    private BoxCollider2D bc;
-    [SerializeField] private LayerMask interactable;
-
-    public static event Action<int> OnInteract = delegate { };
-
-    void Awake()
-    {
-        bc = GetComponent<BoxCollider2D>();
-    }
-
+     private IInteractuableTriggerBehaviour ItemSlot;
     //button interact.
     public void Interact(InputAction.CallbackContext context)
     {
-        if (context.performed && IsTouched())
+
+        if (context.performed  && IsTouched())
         {
-            OnInteract(gameObject.layer);
+
+            ItemSlot.Interact(this.gameObject);
         }
     }
 
+    public void setItem(IInteractuableTriggerBehaviour itb)
+    {
+        if (ItemSlot == null)  
+            ItemSlot = itb;
+        
+    }
+    public void emptyItem()
+    {
+        ItemSlot = null;
+    }
+    public void emptyItem(IInteractuableTriggerBehaviour itb)
+    {
+        if (ItemSlot == itb) emptyItem();
+    }
     public bool IsTouched()
     {
-        return Physics2D.BoxCast(bc.bounds.center, bc.bounds.size, 0f, Vector2.left, 0f, interactable);
+        RaycastHit2D result = this.GetComponent<GroundDetector>().GetInteractuable();
+        if (result)
+        {
+            result.collider.TryGetComponent(out IInteractuableTriggerBehaviour itb);
+            setItem(itb);
+            return true;
+        }
+        return false;
     }
+
 }

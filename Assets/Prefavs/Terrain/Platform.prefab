@@ -120,13 +120,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1212931340164090096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097407cf7da63654fbb60500a8cf2124, type: 3}
+  m_Script: {fileID: 11500000, guid: 325d4a08781dd2246a002de07945974d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   changerColor: {r: 0.427451, g: 1, b: 0.44705886, a: 1}
-  beforeColor: {r: 0.427451, g: 1, b: 0.44705886, a: 0.6039216}
-  layerChangeF: 6
-  layerChangeM: 7
+  beforeColor: {r: 0.427451, g: 1, b: 0.44705886, a: 0.5019608}
 --- !u!251 &1451407682
 PlatformEffector2D:
   m_ObjectHideFlags: 0
