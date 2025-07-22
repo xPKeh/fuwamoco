@@ -23,12 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928603931}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5670910660535238551}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5670910660535238548
 GameObject:
@@ -62,13 +63,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5670910660535238548}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1928603932}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5670910660535238546
 SpriteRenderer:
@@ -81,6 +83,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -131,6 +134,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: c759d5bb283d9df45a664bb6a7e21e4a, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -164,6 +186,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1.7
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -185,7 +213,7 @@ MonoBehaviour:
   bc: {fileID: 5670910660535238547}
   wallGround:
     serializedVersion: 2
-    m_Bits: 5376
+    m_Bits: 4864
   noFriction: {fileID: 6200000, guid: c759d5bb283d9df45a664bb6a7e21e4a, type: 2}
   normalFriction: {fileID: 6200000, guid: cdecc09fa91e12a42af33455c1536363, type: 2}
 --- !u!114 &5670910660535238550
@@ -327,16 +355,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5670910660535238548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1331f05bfd73874a923943ec6224e6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b58ba015c366b245ab7140abc61b601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4864
   platformGround:
     serializedVersion: 2
     m_Bits: 4096
-  bc: {fileID: 0}
+  interactuable:
+    serializedVersion: 2
+    m_Bits: 8704
+  bc: {fileID: 5670910660535238547}
 --- !u!114 &7452861813882830356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +404,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2d52a6752703947a4e69e220614186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable:
-    serializedVersion: 2
-    m_Bits: 2048

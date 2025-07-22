@@ -32,7 +32,6 @@ public class SaveFileManager : MonoBehaviour
     {
         updateSave(indexW, indexLvl, levelStars);
         Save();
-        Debug.Log("saved 2");
     }
 
     private void updateSave(int indexW, int indexLvl, DataStructures.LevelStars levelStars)
