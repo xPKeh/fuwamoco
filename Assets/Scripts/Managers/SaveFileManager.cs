@@ -25,7 +25,7 @@ public class SaveFileManager : MonoBehaviour
 
         Load();
         Debug.Log(currentSave.victorias);
-        Debug.Log(currentSave.completedLevels);
+        Debug.Log("level: " + currentSave.completedLevels.Lvl + "World: " + currentSave.completedLevels.W);
     }
 
     public void LevelComplete(int indexW, int indexLvl, DataStructures.LevelStars levelStars)
