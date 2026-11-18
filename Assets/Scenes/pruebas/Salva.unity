@@ -2860,6 +2860,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!114 &1754706414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3787,11 +3788,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945229841726154534, guid: 621bb996b1e3c07449515666b5c77177, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.71
+      value: -11.68
       objectReference: {fileID: 0}
     - target: {fileID: 2945229841726154534, guid: 621bb996b1e3c07449515666b5c77177, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.76
+      value: -3.19
       objectReference: {fileID: 0}
     - target: {fileID: 2945229841726154534, guid: 621bb996b1e3c07449515666b5c77177, type: 3}
       propertyPath: m_LocalPosition.z
